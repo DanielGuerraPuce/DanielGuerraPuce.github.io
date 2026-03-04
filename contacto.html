@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Bibliotheca Virtual</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bibliotheca Virtual</h1>
+        <a href="index.html">
+        <img src="assets/img/banners/logo.png" width="100px">
+        </a>
+    </header>
+
+    <nav>
+        <ul id="menu-nav">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="categorias.html">Categorías</a></li>
+            <li><a href="productos.html">Libros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <h2 class="seccion-titulo" style="margin-top: 10px;">Contacto</h2>
+        <p class="seccion-subtitulo">¿Tienes alguna pregunta? Escríbenos y te responderemos pronto.</p>
+
+        <div class="contacto-contenedor">
+
+            <!-- Información de contacto -->
+            <aside class="info-contacto">
+                <h3>Información de contacto</h3>
+                <p><strong>Email:</strong><br> contacto@bibliotheca.ec</p>
+                <p><strong>Teléfono:</strong><br> +593 99 123 4567</p>
+                <p><strong>Dirección:</strong><br> Av. Amazonas N21-147, Quito, Ecuador</p>
+                <p><strong>Horario:</strong><br> Lunes a Viernes: 9:00 - 18:00<br>Sábados: 10:00 - 14:00</p>
+                <br>
+                <p style="font-style: italic; color: #777; font-size: 13px;">"Un lector vive mil vidas antes de morir." — George R.R. Martin</p>
+            </aside>
+
+            <section class="formulario-contacto">
+                <h3>Envíanos un mensaje</h3>
+
+                <form id="formulario-contacto" onsubmit="validarFormulario(event)">
+
+                    <div class="form-grupo">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: María López">
+                        <span class="error-texto"></span>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="ciudad">Ciudad *</label>
+                        <input type="text" id="ciudad" name="ciudad" placeholder="Ej: Guayaquil">
+                        <span class="error-texto"></span>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" name="email" placeholder="usuario@correo.com">
+                        <span class="error-texto"></span>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="asunto">Asunto *</label>
+                        <select id="asunto" name="asunto">
+                            <option value="">-- Selecciona un asunto --</option>
+                            <option value="consulta">Consulta sobre un libro</option>
+                            <option value="pedido">Estado de mi pedido</option>
+                            <option value="recomendacion">Solicitar recomendación</option>
+                            <option value="devolucion">Devolución o cambio</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                        <span class="error-texto"></span>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="descripcion">Descripción *</label>
+                        <textarea id="descripcion" name="descripcion" placeholder="Escribe tu mensaje aquí..."></textarea>
+                        <span class="error-texto"></span>
+                    </div>
+
+                    <p style="font-size: 12px; color: #999; margin-bottom: 12px;">* Todos los campos son obligatorios</p>
+
+                    <button type="submit" class="btn">Enviar mensaje</button>
+
+                </form>
+
+                <div class="mensaje-exito" id="mensaje-exito">
+                    <p>✅ <strong>¡Mensaje enviado con éxito!</strong></p>
+                    <p>Gracias por escribirnos. Te responderemos en menos de 24 horas.</p>
+                    <br>
+                    <a href="index.html">← Volver al inicio</a>
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2025 Bibliotheca Virtual | Quito, Ecuador</p>
+        <p>contacto@bibliotheca.ec | Tel: +593 99 123 4567</p>
+    </footer>
+
+    <button class="carrito-btn" id="btn-carrito" onclick="toggleCarrito()">🛒 Carrito (0)</button>
+
+    <div class="carrito-panel" id="carrito-panel">
+        <h3>Mi Carrito</h3>
+        <div id="carrito-items">
+            <p class="carrito-vacio">El carrito está vacío</p>
+        </div>
+        <p class="carrito-total" id="carrito-total">Total: $0.00</p>
+        <br>
+        <button class="btn" style="width:100%" onclick="alert('¡Gracias por tu compra!')">Comprar ahora</button>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>

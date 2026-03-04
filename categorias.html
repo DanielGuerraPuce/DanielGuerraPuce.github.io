@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías - Bibliotheca Virtual</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bibliotheca Virtual</h1>
+        <a href="index.html">
+        <img src="assets/img/banners/logo.png" width="100px">
+        </a>
+    </header>
+
+    <nav>
+        <ul id="menu-nav">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="categorias.html">Categorías</a></li>
+            <li><a href="productos.html">Libros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <h2 class="seccion-titulo" style="margin-top: 10px;">Categorías de Libros</h2>
+        <p class="seccion-subtitulo">Explora nuestra colección organizada por géneros literarios</p>
+
+        <div class="categorias-grid">
+
+            <article class="categoria-card">
+                <div>
+                  <img src="assets/img/categorias/p1.jfif" alt="" style="width: 300px;">
+                </div>
+                <h3>Literatura Clásica</h3>
+                <p>Las grandes obras que definieron la narrativa universal. Cervantes, Tolstói, Dostoievski y más.</p>
+                <a href="productos.html">Ver libros →</a>
+            </article>
+
+            <article class="categoria-card">
+                <div>
+                  <img src="assets/img/categorias/p2.jpg" alt="" style="width: 300px;">
+                </div>
+                <h3>Ciencia</h3>
+                <p>Divulgación científica, biología, física y astronomía. Sagan, Hawking y los grandes científicos.</p>
+                <a href="productos.html">Ver libros →</a>
+            </article>
+
+            <article class="categoria-card">
+                <div>
+                  <img src="assets/img/categorias/p3.jpg" alt="" style="width: 300px;">
+                </div>
+                <h3>Historia y Política</h3>
+                <p>Desde las civilizaciones antiguas hasta los conflictos modernos. Comprende el pasado.</p>
+                <a href="productos.html">Ver libros →</a>
+            </article>
+
+            <article class="categoria-card">
+                <div>
+                  <img src="assets/img/categorias/p4.jpg" alt="" style="width: 300px;">
+                </div>
+                <h3>Ciencia Ficción</h3>
+                <p>Viajes espaciales, inteligencia artificial y futuros alternativos. Asimov, Orwell y más.</p>
+                <a href="productos.html">Ver libros →</a>
+            </article>
+
+            <article class="categoria-card">
+                <div>
+                  <img src="assets/img/categorias/p5.jpg" alt="" style="width: 300px;">
+                </div>
+                <h3>Manga</h3>
+                <p>Descubre el mundo de las historietas en Japon.</p>
+                <a href="productos.html">Ver libros →</a>
+            </article>
+
+            <article class="categoria-card">
+                <div>
+                  <img src="assets/img/categorias/p6.jpg" alt="" style="width: 300px;">
+                </div>                
+                <h3>Literatura Latinoamericana</h3>
+                <p>El boom latinoamericano. García Márquez, Borges, Vargas Llosa, Cortázar y Rulfo.</p>
+                <a href="productos.html">Ver libros →</a>
+            </article>
+
+            <article class="categoria-card">
+                <div>
+                  <img src="assets/img/categorias/p7.jpg" alt="" style="width: 300px;">
+                </div>
+                <h3>Misterio y Thriller</h3>
+                <p>Suspenso, detectives y crímenes. Agatha Christie, Arthur Conan Doyle y Stieg Larsson.</p>
+                <a href="productos.html">Ver libros →</a>
+            </article>
+
+            <article class="categoria-card">
+                <div>
+                  <img src="assets/img/categorias/p8.jpg" alt="" style="width: 300px;">
+                </div>
+                <h3>Negocios y Economía</h3>
+                <p>Emprendimiento, liderazgo y finanzas personales. Herramientas para el mundo profesional.</p>
+                <a href="productos.html">Ver libros →</a>
+            </article>
+
+            <article class="categoria-card">
+                <div>
+                  <img src="assets/img/categorias/p9.jpg" alt="" style="width: 300px;">
+                </div>              
+                <h3>Poesía y Teatro</h3>
+                <p>Neruda, Lorca, Shakespeare. La palabra como arte en su expresión más pura y lírica.</p>
+                <a href="productos.html">Ver libros →</a>
+            </article>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2025 Bibliotheca Virtual | Quito, Ecuador</p>
+        <p>contacto@bibliotheca.ec | Tel: +593 99 123 4567</p>
+    </footer>
+
+    <!-- Carrito flotante -->
+    <button class="carrito-btn" id="btn-carrito" onclick="toggleCarrito()">🛒 Carrito (0)</button>
+
+    <div class="carrito-panel" id="carrito-panel">
+        <h3>Mi Carrito</h3>
+        <div id="carrito-items">
+            <p class="carrito-vacio">El carrito está vacío</p>
+        </div>
+        <p class="carrito-total" id="carrito-total">Total: $0.00</p>
+        <br>
+        <button class="btn" style="width:100%" onclick="alert('¡Gracias por tu compra!')">Comprar ahora</button>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>

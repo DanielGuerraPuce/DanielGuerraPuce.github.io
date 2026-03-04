@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros - Bibliotheca Virtual</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bibliotheca Virtual</h1>
+        <a href="index.html">
+        <img src="assets/img/banners/logo.png" width="100px">
+        </a>
+    </header>
+
+    <nav>
+        <ul id="menu-nav">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="categorias.html">Categorías</a></li>
+            <li><a href="productos.html">Libros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <h2 class="seccion-titulo" style="margin-top: 10px;">Catálogo de Libros</h2>
+        <p class="seccion-subtitulo">Encuentra tu próxima lectura favorita</p>
+
+        <div class="productos-layout">
+
+            <!-- Filtros -->
+            <aside class="filtros">
+                <h3>Filtrar por género</h3>
+                <div class="filtros-seccion">
+                    <label><input type="checkbox" class="filtro-genero" value="clasica" onchange="aplicarFiltros()"> Literatura Clásica</label>
+                    <label><input type="checkbox" class="filtro-genero" value="ciencia" onchange="aplicarFiltros()"> Ciencia</label>
+                    <label><input type="checkbox" class="filtro-genero" value="historia" onchange="aplicarFiltros()"> Historia</label>
+                    <label><input type="checkbox" class="filtro-genero" value="scifi" onchange="aplicarFiltros()"> Ciencia Ficción</label>
+                    <label><input type="checkbox" class="filtro-genero" value="latinoamerica" onchange="aplicarFiltros()"> Literatura Latinoamericana</label>
+                    <label><input type="checkbox" class="filtro-genero" value="manga" onchange="aplicarFiltros()"> Manga</label>
+                    <label><input type="checkbox" class="filtro-genero" value="thriller" onchange="aplicarFiltros()"> Thriller</label>
+                </div>
+
+                <h3>Precio máximo</h3>
+                <div class="filtros-seccion">
+                    <input type="range" id="precio-rango" min="5" max="50" value="50" onchange="actualizarPrecio()" oninput="actualizarPrecio()">
+                    <p>Hasta: <strong id="precio-valor">$50</strong></p>
+                </div>
+
+                <p id="contador-libros" style="font-size: 13px; color: #777;">Mostrando 9 libros</p>
+            </aside>
+
+            <section>
+                <div class="libros-grid">
+
+                    <article class="libro-card" data-genero="latinoamerica" data-precio="18.90">
+                        <div style="display: flex; justify-content: center;">
+                         <img src="assets/img/productos/AN.webp" style="height: 360px;">
+                        </div>
+                        <h3>Cien Años de Soledad</h3>
+                        <p class="autor">Gabriel García Márquez</p>
+                        <p class="descripcion">La historia épica de la familia Buendía en el mítico pueblo de Macondo. Obra cumbre del realismo mágico.</p>
+                        <p class="precio">$18.90</p>
+                        <button onclick="agregarAlCarrito('Cien Años de Soledad', 18.90)">Agregar al carrito</button>
+                    </article>
+
+                    <article class="libro-card" data-genero="ciencia" data-precio="21.50">
+                        <div style="display: flex; justify-content: center;">
+                         <img src="assets/img/productos/CO.webp" style="height: 360px;">
+                        </div>
+                        <h3>Cosmos</h3>
+                        <p class="autor">Carl Sagan</p>
+                        <p class="descripcion">Un viaje por el universo que combina astronomía, historia y filosofía de manera accesible para todos.</p>
+                        <p class="precio">$21.50</p>
+                        <button onclick="agregarAlCarrito('Cosmos', 21.50)">Agregar al carrito</button>
+                    </article>
+
+                    <article class="libro-card" data-genero="clasica" data-precio="19.75">
+                        <div style="display: flex; justify-content: center;">
+                         <img src="assets/img/productos/RO.webp" style="height: 360px;">
+                        </div>
+                        <h3>El Nombre de la Rosa</h3>
+                        <p class="autor">Umberto Eco</p>
+                        <p class="descripcion">Una investigación medieval en un monasterio italiano donde los libros ocultan oscuros secretos.</p>
+                        <p class="precio">$19.75</p>
+                        <button onclick="agregarAlCarrito('El Nombre de la Rosa', 19.75)">Agregar al carrito</button>
+                    </article>
+
+                    <article class="libro-card" data-genero="scifi" data-precio="16.00">
+                        <div style="display: flex; justify-content: center;">
+                         <img src="assets/img/productos/1984.jpg" style="height: 380px;">
+                        </div>
+                        <h3>1984</h3>
+                        <p class="autor">George Orwell</p>
+                        <p class="descripcion">Un futuro totalitario donde el Gran Hermano lo vigila todo. La novela distópica más influyente del siglo XX.</p>
+                        <p class="precio">$16.00</p>
+                        <button onclick="agregarAlCarrito('1984', 16.00)">Agregar al carrito</button>
+                    </article>
+
+                    <article class="libro-card" data-genero="clasica" data-precio="15.00">
+                        <div style="display: flex; justify-content: center;">
+                         <img src="assets/img/productos/DO.webp" style="height: 360px;">
+                        </div>
+                        <h3>Don Quijote de la Mancha</h3>
+                        <p class="autor">Miguel de Cervantes</p>
+                        <p class="descripcion">Las aventuras del ingenioso hidalgo Don Quijote y su fiel escudero Sancho Panza. La obra más importante en español.</p>
+                        <p class="precio">$15.00</p>
+                        <button onclick="agregarAlCarrito('Don Quijote de la Mancha', 15.00)">Agregar al carrito</button>
+                    </article>
+
+                    <article class="libro-card" data-genero="historia" data-precio="24.90">
+                        <div style="display: flex; justify-content: center;">
+                         <img src="assets/img/productos/SA.webp" style="height: 360px;">
+                        </div>
+                        <h3>Sapiens</h3>
+                        <p class="autor">Yuval Noah Harari</p>
+                        <p class="descripcion">Una breve historia de la humanidad que examina cómo el Homo sapiens llegó a dominar el planeta.</p>
+                        <p class="precio">$24.90</p>
+                        <button onclick="agregarAlCarrito('Sapiens', 24.90)">Agregar al carrito</button>
+                    </article>
+
+                    <article class="libro-card" data-genero="latinoamerica" data-precio="17.50">
+                        <div style="display: flex; justify-content: center;">
+                         <img src="assets/img/productos/FI.webp" style="height: 360px;">
+                        </div>
+                        <h3>Ficciones</h3>
+                        <p class="autor">Jorge Luis Borges</p>
+                        <p class="descripcion">Laberintos, espejos y paradojas. Los cuentos de Borges redefinieron la narrativa latinoamericana.</p>
+                        <p class="precio">$17.50</p>
+                        <button onclick="agregarAlCarrito('Ficciones', 17.50)">Agregar al carrito</button>
+                    </article>
+
+                    <article class="libro-card" data-genero="manga" data-precio="22.00">
+                        <div style="display: flex; justify-content: center;">
+                         <img src="assets/img/productos/DB.jpg" style="height: 360px; justify-content: center;">
+                        </div>
+                        <h3>Dragon Ball</h3>
+                        <p class="autor">Akira Toriyama</p>
+                        <p class="descripcion">narra la historia de Son Goku, un niño con cola de mono y fuerza sobrehumana que vive en la montaña. Tras conocer a Bulma, se embarca en una búsqueda para reunir siete esferas del dragon.</p>
+                        <p class="precio">$18.90</p>
+                        <button onclick="agregarAlCarrito('Dragon Ball', 18.90)">Agregar al carrito</button>
+                    </article>
+
+                    <article class="libro-card" data-genero="thriller" data-precio="19.00">
+                        <div style="display: flex; justify-content: center;">
+                         <img src="assets/img/productos/NILO.webp" style="height: 360px;">
+                        </div>
+                        <h3>Muerte en el Nilo</h3>
+                        <p class="autor">Agatha Christie</p>
+                        <p class="descripcion">El detective Poirot investiga un asesinato en un crucero por el Nilo. Un misterio perfecto de la reina del crimen.</p>
+                        <p class="precio">$19.00</p>
+                        <button onclick="agregarAlCarrito('Muerte en el Nilo', 19.00)">Agregar al carrito</button>
+                    </article>
+
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2025 Bibliotheca Virtual | Quito, Ecuador</p>
+        <p>contacto@bibliotheca.ec | Tel: +593 99 123 4567</p>
+    </footer>
+
+    <!-- Carrito flotante -->
+    <button class="carrito-btn" id="btn-carrito" onclick="toggleCarrito()">🛒 Carrito (0)</button>
+
+    <div class="carrito-panel" id="carrito-panel">
+        <h3>Mi Carrito</h3>
+        <div id="carrito-items">
+            <p class="carrito-vacio">El carrito está vacío</p>
+        </div>
+        <p class="carrito-total" id="carrito-total">Total: $0.00</p>
+        <br>
+        <button class="btn" style="width:100%" onclick="alert('¡Gracias por tu compra!')">Comprar ahora</button>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>

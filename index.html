@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotheca Virtual - Inicio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bibliotheca Virtual</h1>
+        <a href="index.html">
+        <img src="assets/img/logo.png" width="100px">
+        </a>
+    </header>
+
+    <nav>
+        <ul id="menu-nav">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="categorias.html">Categorías</a></li>
+            <li><a href="productos.html">Libros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section class="banner">
+            <h2>Bienvenido a nuestra Bibliotheca Virtual</h2>
+            <p>Encuentra los mejores libros de literatura, ciencia, historia, manga y mucho más.</p>
+            <p>Hacemos envios en todo el Ecuador.</p>   
+            <a href="categorias.html" class="btn">Ver categorías</a>
+        </section>
+
+        <section>
+            <h2 class="seccion-titulo">Libros Destacados</h2>
+            <p class="seccion-subtitulo">Una selección de nuestros títulos más populares</p>
+
+            <div class="libros-grid">
+
+                <article class="libro-card">
+                    <div>
+                      <img src="assets/img/productos/DB.jpg">
+                    </div>
+                    <h3>Dragon Ball</h3>
+                    <p class="autor">Akira Toriyama</p>
+                    <p class="descripcion">sigue las aventuras de Son Goku, un niño excepcional con cola de mono y fuerza sobrehumana, quien tras la muerte de su abuelo se une a Bulma para buscar las siete esferaz del Dragon.</p>
+                    <p class="precio">$18.90</p>
+                    <button onclick="agregarAlCarrito('Dragon Ball', 18.90)">Agregar al carrito</button>
+                </article>
+
+                <article class="libro-card">
+                    <div>
+                      <img src="assets/img/productos/Greg.webp">
+                    </div>
+                    <h3>El Diario de Greg: Un Renacuajo</h3>
+                    <p class="autor">Jeff Kinney</p>
+                    <p class="descripcion">Greg Heffley es un chico impopular al que su madre le regala un diario para que escriba lo que le pasa en la escuela y fuera ésta. Ahí escribe las cosas que él y sus amigos viven en el colegio.</p>
+                    <p class="precio">$21.50</p>
+                    <button onclick="agregarAlCarrito('El Diario de Greg: Un Renacuajo', 21.50)">Agregar al carrito</button>
+                </article>
+
+                <article class="libro-card">
+                    <div>
+                      <img src="assets/img/productos/1984.jpg">
+                    </div>
+                    <h3>1984</h3>
+                    <p class="autor">George Orwell</p>
+                    <p class="descripcion">Un futuro distópico donde el Gran Hermano lo vigila todo. Considerada como una de las novelas más influyente del siglo XX.</p>
+                    <p class="precio">$16.00</p>
+                    <button onclick="agregarAlCarrito('1984', 16.00)">Agregar al carrito</button>
+                </article>
+
+            </div>
+
+            <br>
+            <a href="productos.html" class="btn">Ver todos los libros</a>
+        </section>
+
+        <br><br>
+
+        <!-- Géneros rápidos -->
+        <section>
+            <h2 class="seccion-titulo">Explora por Género</h2>
+            <p class="seccion-subtitulo">Elige el tipo de libro que más te gusta</p>
+            <p>
+                <a href="categorias.html" class="btn" style="margin: 5px; background-color: #8e44ad;">Literatura</a>
+                <a href="categorias.html" class="btn" style="margin: 5px; background-color: #2980b9;">Ciencia</a>
+                <a href="categorias.html" class="btn" style="margin: 5px; background-color: #27ae60;">Historia</a>
+                <a href="categorias.html" class="btn" style="margin: 5px; background-color: #c0392b;">Ciencia Ficción</a>
+                <a href="categorias.html" class="btn" style="margin: 5px; background-color: #16a085;">Manga</a>
+                <a href="categorias.html" class="btn" style="margin: 5px; background-color: #c9c63f;">Infantil</a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2025 Bibliotheca Virtual | Quito, Ecuador</p>
+        <p>contacto@bibliotheca.ec | Tel: +593 99 123 4567</p>
+    </footer>
+
+    <button class="carrito-btn" id="btn-carrito" onclick="toggleCarrito()">🛒 Carrito (0)</button>
+
+    <div class="carrito-panel" id="carrito-panel">
+        <h3>Mi Carrito</h3>
+        <div id="carrito-items">
+            <p class="carrito-vacio">El carrito está vacío</p>
+        </div>
+        <p class="carrito-total" id="carrito-total">Total: $0.00</p>
+        <br>
+        <button class="btn" style="width:100%" onclick="alert('¡Gracias por tu compra!')">Comprar ahora</button>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>
