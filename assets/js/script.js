@@ -1,11 +1,6 @@
-// ==========================================
-// Carrito de compras
-// ==========================================
-
 var carrito = [];
 
 function agregarAlCarrito(nombre, precio) {
-    // Verificar si ya está en el carrito
     var encontrado = false;
     for (var i = 0; i < carrito.length; i++) {
         if (carrito[i].nombre === nombre) {
@@ -35,7 +30,6 @@ function actualizarCarrito() {
 
     if (!contenedor) return;
 
-    // Actualizar contador del botón
     var totalItems = 0;
     for (var i = 0; i < carrito.length; i++) {
         totalItems += carrito[i].cantidad;
@@ -44,7 +38,6 @@ function actualizarCarrito() {
         botonCarrito.textContent = "🛒 Carrito (" + totalItems + ")";
     }
 
-    // Mostrar items
     if (carrito.length === 0) {
         contenedor.innerHTML = "<p class='carrito-vacio'>El carrito está vacío</p>";
         if (totalEl) totalEl.textContent = "Total: $0.00";
@@ -77,11 +70,6 @@ function toggleCarrito() {
         panel.style.display = "block";
     }
 }
-
-
-// ==========================================
-// Filtros en página de productos
-// ==========================================
 
 function aplicarFiltros() {
     var checkboxes = document.querySelectorAll(".filtro-genero");
@@ -129,23 +117,16 @@ function actualizarPrecio() {
     aplicarFiltros();
 }
 
-
-// ==========================================
-// Validación del formulario de contacto
-// ==========================================
-
 function validarFormulario(event) {
     event.preventDefault();
 
     var hayError = false;
 
-    // Limpiar errores anteriores
     var grupos = document.querySelectorAll(".form-grupo");
     for (var i = 0; i < grupos.length; i++) {
         grupos[i].classList.remove("tiene-error");
     }
 
-    // Validar nombre
     var nombre = document.getElementById("nombre");
     if (!nombre.value.trim()) {
         mostrarError("nombre", "El nombre es obligatorio.");
@@ -155,14 +136,12 @@ function validarFormulario(event) {
         hayError = true;
     }
 
-    // Validar ciudad
     var ciudad = document.getElementById("ciudad");
     if (!ciudad.value.trim()) {
         mostrarError("ciudad", "La ciudad es obligatoria.");
         hayError = true;
     }
 
-    // Validar email
     var email = document.getElementById("email");
     var regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email.value.trim()) {
@@ -173,14 +152,12 @@ function validarFormulario(event) {
         hayError = true;
     }
 
-    // Validar asunto
     var asunto = document.getElementById("asunto");
     if (!asunto.value) {
         mostrarError("asunto", "Por favor selecciona un asunto.");
         hayError = true;
     }
 
-    // Validar descripción
     var descripcion = document.getElementById("descripcion");
     if (!descripcion.value.trim()) {
         mostrarError("descripcion", "La descripción es obligatoria.");
@@ -190,7 +167,6 @@ function validarFormulario(event) {
         hayError = true;
     }
 
-    // Si no hay errores, mostrar mensaje de éxito
     if (!hayError) {
         document.getElementById("formulario-contacto").style.display = "none";
         document.getElementById("mensaje-exito").style.display = "block";
@@ -204,11 +180,6 @@ function mostrarError(campoId, mensaje) {
     grupo.classList.add("tiene-error");
     errorEl.textContent = mensaje;
 }
-
-
-// ==========================================
-// Menú responsive (hamburguesa simple)
-// ==========================================
 
 function toggleMenu() {
     var menu = document.getElementById("menu-nav");
